@@ -12,6 +12,13 @@
 */
 
 
+    
+// Route::get('devicechannel',[
+//     'uses' => 'DevController@index',
+//     'as' => 'device.index'
+// ]);
+
+
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
@@ -51,6 +58,8 @@ Route::get('room/show/{id}',[
 Route::get('/', function () {
     return view('welcome');
 });
+// Route::get('/channel', 'DevController@index')->name('channel');
+
 
 Route::group(['middleware' => 'auth'], function(){
 

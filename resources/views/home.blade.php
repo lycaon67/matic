@@ -1,20 +1,169 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Matic : Home Automation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Matic: Home Automation</title>
 
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/maticstrap.css">
-    <style>
-        .card-content {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="Semantic-UI-CSS-master/semantic.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
+    <!-- Sidebar -->
+    <div class="ui sidebar inverted vertical menu sidebar-menu" id="sidebar">
+        <div class="item ">
+            <img src="img/icons/Matik-word-logo-white.png" style="width: 178px!important;">    
+        </div>        
+        <div class="item divider">
+            <div class="card">
+                <div class="content">
+                    <img class="right floated mini ui image" src="img/jenny.jpg">
+                    <div class="header">
+                        {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}
+                    </div>
+                    <div class="meta">
+                        {{ Auth::user()->email }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="item divider">
+            <div class="header">
+                <i class="icon home alternate"></i>
+                My House
+                <i id="add-house" class="icon plus square outline create-house"></i> 
+            </div>
+            <div class="menu">
+                <div class="ui accordion item inverted">
+
+                    @if(count($houses) > 0)
+                        @foreach($houses as $house)
+                            <div class="title">
+                                {{ $house->name }}<i class="setting icon house-setting" ></i>
+                            </div>
+                            <div class="content house-room">
+                                @if(count($rooms) > 0)
+                                    @foreach($rooms as $room)   
+                                        @if($house->id == $room->houseid)   
+                                        
+                                        <p class="transition hidden">
+                                            {{ $room->name }}
+                                        </p>
+                                        @endif 
+                                    @endforeach
+
+                                @else{
+                                    <p class="transition hidden">
+                                        no room
+                                    </p>
+                                }
+                                @endif
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
+            </div>  
+        </div>
+    </div>
+    <!-- End Sidebar -->
+    
+
+    <!-- Topbar -->
+    <nav class="ui top fixed inverted menu">
+        <div class="left menu">
+            <a class="sidebar-menu-toggler item" data-target="#sidebar">
+                <i class="sidebar icon"></i>
+            </a>
+        </div>
+        <div class="right menu">
+            <div class="item">
+                    <a href="{{ route('logout') }}">logout</a> 
+                <form  action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf      
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- End Topbar -->
+    
+
+<!-- Modal House -->
+    
+    <div class="ui tiny modal " id="house-modal">
+        <i class="close icon"></i>
+        <div class="header middle aligned center aligned">
+            Build a house
+        </div>
+        <div class="content">
+            <form class="ui form" method="POST" action="{{ route('login.custom') }}">
+                @csrf
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="user icon"></i>
+                        <input type="text" placeholder="E-mail address" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                    </div>
+                </div>  
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input id="password" type="password" placeholder="Password" class="input100 form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui checkbox">
+                        <input type="checkbox" tabindex="0" class="hidden">
+                        <label for="">Remember me!</label>
+                    </div>
+                </div>
+                <button class="ui fluid positive right labeled icon button float right">{{ __('Login') }}<i class="checkmark icon"></i></button>
+            </form>
+            <div class="ui message float right  ">
+                New to us? <a href="#">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+<!-- end modal -->
+
+    <!-- Pusher -->
+    <div class="pusher">
+        <div class="main-content">    
+            <div class="ui fluid card">
+                <div class="ui grid stackable padded">
+                    
+                    <div class="three wide computer column">
+                        <div class="ui fluid card">
+                            <div class="content">
+                                <div class="relay on">
+                                    <i class="ui icon power"></i>                            
+                                    <h3>Relay 1</h3> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+
+            </div>
+        
+        </div>
+    </div>
+
+    <script src="js/jquery.3.2.1.min.js"></script>
+    <script src="Semantic-UI-CSS-master/semantic.min.js"></script>
+    <script src="js/script.js"></script>
+
+
+
+
+
+{{-- 
+
+
 	<div class="wrapper">
 		<div class="sidebar">
 			<div class="main-sidebar">
@@ -46,7 +195,7 @@
                                     @if(count($rooms) > 0)
                                     @foreach($rooms as $room)   
                                         @if($house->id == $room->houseid)                                 
-                                        <li>{{ $house->id }} {{ $room->name }}</li>
+                                        <li data-toggle="collapse">{{ $house->id }} {{ $room->name }}</li>
                                         @endif 
                                     @endforeach
                                     @else{
@@ -348,7 +497,7 @@
             }
         });
     }    
-</script>
+</script> --}}
 
 </body>
 </html>

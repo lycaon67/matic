@@ -1,279 +1,293 @@
-@font-face {
-  font-family: "Poppins-Regular";
-  src: url("../fonts/poppins/Poppins-Regular.ttf"); }
-@font-face {
-  font-family: "Poppins-SemiBold";
-  src: url("../fonts/poppins/Poppins-SemiBold.ttf"); }
 
-@font-face {
-  font-family: Montserrat-Regular;
-  src: url('../fonts/montserrat/Montserrat-Regular.ttf'); 
+body{
+  height: calc(100vh - 60px);
 }
 
-@font-face {
-  font-family: Montserrat-ExtraBold;
-  src: url('../fonts/montserrat/Montserrat-ExtraBold.ttf'); 
+.ui.vertical.menu.sidebar-menu{
+    overflow-y: visible!important;
+    max-height: calc(100%)!important;
 }
 
-@font-face {
-  font-family: Montserrat-Bold;
-  src: url('../fonts/montserrat/Montserrat-Bold.ttf'); 
+i#add-house {
+    float: right;
+    font-size: 20px;
 }
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-body {
-  font-family: "Poppins-Regular";
-  color: #333;
-  font-size: 13px;
-  margin: 0; }
-
-input, textarea, select, button {
-  font-family: "Poppins-Regular";
-  color: #333;
-  font-size: 13px; }
-
-p, h1, h2, h3, h4, h5, h6, ul {
-  margin: 0; }
-
-img {
-  max-width: 100%; }
-
-ul {
-  padding-left: 0;
-  margin-bottom: 0; }
-
-a:hover {
-  text-decoration: none; }
-
-:focus {
-  outline: none; }
-
-.wrapper {
-  min-height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center; }
-
-.inner {
-  padding: 20px;
-  background: #fff;
-  max-width: 850px;
-  margin: auto;
-  display: flex; }
-  .inner .image-holder {
-    width: 50%; }
-  .inner form {
-    width: 50%;
-    padding-top: 36px;
-    padding-left: 45px;
-    padding-right: 45px; }
-  .inner h3 {
-    text-transform: uppercase;
-    font-size: 25px;
-    font-family: "Poppins-SemiBold";
-    text-align: center;
-    margin-bottom: 28px; }
-
-.form-group {
-  display: flex; }
-  .form-group input {
-    width: 50%; }
-    .form-group input:first-child {
-      margin-right: 25px; }
-
-.form-wrapper {
-  position: relative; }
-  .form-wrapper i {
-    position: absolute;
-    bottom: 9px;
-    right: 0; }
-
-.form-control {
-  border: 1px solid #333;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  display: block;
-  width: 100%;
-  height: 30px;
-  padding: 0;
-  margin-bottom: 25px; }
-  .form-control::-webkit-input-placeholder {
-    font-size: 13px;
-    color: #333;
-    font-family: "Montserrat-Bold"; }
-  .form-control::-moz-placeholder {
-    font-size: 13px;
-    color: #333;
-    font-family: "Montserrat-Bold"; }
-  .form-control:-ms-input-placeholder {
-    font-size: 13px;
-    color: #333;
-    font-family: "Montserrat-Bold"; }
-  .form-control:-moz-placeholder {
-    font-size: 13px;
-    color: #333;
-    font-family: "Montserrat-Bold"; }
-
-  .txt1 {
-  font-family: Montserrat-Bold;
-  font-size: 16px;
-  color: #cccccc;
-  line-height: 1.4;
-} 
-
-.container-login100-form-btn {
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.house-setting{
+  float: right;
+}
+.house-room {
+  padding-left: 20px!important;
 }
 
-.login100-form-btn {
-  font-family: Montserrat-Bold;
-  font-size: 15px;
-  line-height: 1.5;
-  color: #e0e0e0;
-
-  width: 100%;
-  height: 50px;
-  border-radius: 25px;
-  background: #333333;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 25px;
-
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
-
-  position: relative;
-  z-index: 1;
+.item.divider::before {
+    margin-top: 20px; 
 }
 
-.login100-form-btn::before {
-  content: "";
-  display: block;
+.main-content{
+  margin: 50px 10px 10px 10px;
+  
+}
+
+/* relay */
+.relay {
+  height: 150px;
+  margin: -14px;
+  text-align: center;
+}
+
+.relay i {
+  font-size: 25vh;
+  transform: translate(0%,50%);
+}
+
+.relay.on i{
+  color: red;
+}
+
+.relay.on:hover i{
+  color: green;
+}
+/* relay end */
+
+/* Login Form */
+.login-box{
+  z-index: 9999;
   position: absolute;
-  z-index: -1;
+  top: 0;
+  left: -100%;
   width: 100%;
   height: 100%;
-  border-radius: 25px;
-  top: 0;
-  left: 0;
+  background-image: linear-gradient(45deg,#9fbaa8,#41454c);
+  transition: 0.6s;
+}
+
+.login-form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+  text-align: center;
+}
+
+.login-form h1{
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.txtb{
+  display: block;
+  box-sizing: border-box;
+  width: 300px;
+  background: #ffffff28;
+  border: 1px solid white;
+  padding: 10px 20px;
+  color: white;
+  outline: none;
+  margin: 10px 0;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.login-btn{
+  width: 300px;
+  background: #2c3e50;
+  border: 0;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.hide-btn{
+  color:#000;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  cursor: pointer;
+  font-size:24px;
+  opacity: 0.7;
+}
+
+.showed{
+   left: 0;
+}
+
+/* Login Form end */
+
+
+@media (min-width:767px){ 
+
+  /* Navbar */
+  .ui.menu{
+    background-image: linear-gradient(45deg,#9fbaa8,#41454c);
+    color: white!important;
+  }
+  /* End Navbar */
+
+  /* Team Section */
+  .team-section{
+    overflow: hidden;
+    text-align: center;
+    background-image: url('../img/header-bg.jpg');
+    background-size: 100% 100%;
+    padding: 60px;
+  }
+  .team-section h1{
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    color: white;
+    font-size: 40px;
+  }
+  .border{
+    display: block;
+    margin: auto;
+    width: 160px;
+    height: 3px;
+    background: #3498db;
+    margin-bottom: 40px;
+  }
+  .ps{
+    margin-bottom: 40px;
+  }
+  .ps a{
+    display: inline-block;
+    margin: 0 30px;
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  .ps a img{
+    width: 100%;
+    filter: grayscale(100%);
+    transition: 0.4s all;    
+  }
+  .ps a:hover > img{
+    filter: none;
   }
 
-select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  cursor: pointer;
-  padding-left: 20px; }
-  select option[value=""][disabled] {
-    display: none; }
+  .section{
+    width:600px;
+    margin: auto;
+    font-size: 20px;
+    color: white;
+    text-align: justify;
+    height: 0;
+    overflow: hidden;
+  }
+  .section:target{
+    height: auto; 
+  }
+  .name{
+    display: block;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 22px;
+  }
+/* Team Section End */
 
-button {
-  border: none;
-  width: 164px;
-  height: 51px;
-  margin: auto;
-  margin-top: 40px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  background: #333;
-  font-size: 15px;
-  color: #fff;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s; }
-  button i {
-    margin-left: 10px;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0); }
-  button:hover i, button:focus i, button:active i {
-    -webkit-animation-name: hvr-icon-wobble-horizontal;
-    animation-name: hvr-icon-wobble-horizontal;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-timing-function: ease-in-out;
-    -webkit-animation-iteration-count: 1;
-    animation-iteration-count: 1; }
 
-@-webkit-keyframes hvr-icon-wobble-horizontal {
-  16.65% {
-    -webkit-transform: translateX(6px);
-    transform: translateX(6px); }
-  33.3% {
-    -webkit-transform: translateX(-5px);
-    transform: translateX(-5px); }
-  49.95% {
-    -webkit-transform: translateX(4px);
-    transform: translateX(4px); }
-  66.6% {
-    -webkit-transform: translateX(-2px);
-    transform: translateX(-2px); }
-  83.25% {
-    -webkit-transform: translateX(1px);
-    transform: translateX(1px); }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0); } }
-@keyframes hvr-icon-wobble-horizontal {
-  16.65% {
-    -webkit-transform: translateX(6px);
-    transform: translateX(6px); }
-  33.3% {
-    -webkit-transform: translateX(-5px);
-    transform: translateX(-5px); }
-  49.95% {
-    -webkit-transform: translateX(4px);
-    transform: translateX(4px); }
-  66.6% {
-    -webkit-transform: translateX(-2px);
-    transform: translateX(-2px); }
-  83.25% {
-    -webkit-transform: translateX(1px);
-    transform: translateX(1px); }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0); } }
-@media (max-width: 1199px) {
-  .wrapper {
-    background-position: right center; } }
-@media (max-width: 991px) {
-  .inner form {
-    padding-top: 10px;
-    padding-left: 30px;
-    padding-right: 30px; } }
-@media (max-width: 767px) {
-  .inner {
-    display: block; }
-    .inner .image-holder {
-      width: 100%; }
-    .inner form {
-      width: 100%;
-      padding: 40px 0 30px; }
 
-  button {
-    margin-top: 60px; } }
 
-/*# sourceMappingURL=style.css.map */
+
+
+
+
+
+
+
+
+
+
+  /* End Team Section */
+
+  body{
+    height: calc(100vh - 60px);
+  }
+
+  .ui.vertical.menu.sidebar-menu{
+    visibility: visible;
+    transform: translate3d(0,0,0);
+  }
+
+  .sidebar-menu-toggler {
+      display: none!important;
+  }
+
+  .main-content{
+  margin: 60px 10px 0px 16em;
+  }
+
+  
+
+}
+
+/*// Semantic UI has these classes, however they're only applicable to
+// grids, containers, rows and columns.
+// plus, there isn't any `mobile hidden`, `X hidden` class.
+// this snippet is using the same class names and same approach
+// plus a bit more but to all elements.
+//
+// see https://github.com/Semantic-Org/Semantic-UI/issues/1114*/
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+    [class*="mobile hidden"],
+    [class*="tablet only"]:not(.mobile),
+    [class*="computer only"]:not(.mobile),
+    [class*="large screen only"]:not(.mobile),
+    [class*="widescreen only"]:not(.mobile),
+    [class*="or lower hidden"] {
+      display: none !important;
+    }
+  }
+  
+  /* Tablet / iPad Portrait */
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    [class*="mobile only"]:not(.tablet),
+    [class*="tablet hidden"],
+    [class*="computer only"]:not(.tablet),
+    [class*="large screen only"]:not(.tablet),
+    [class*="widescreen only"]:not(.tablet),
+    [class*="or lower hidden"]:not(.mobile) {
+      display: none !important;
+    }
+  }
+  
+  /* Computer / Desktop / iPad Landscape */
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    [class*="mobile only"]:not(.computer),
+    [class*="tablet only"]:not(.computer),
+    [class*="computer hidden"],
+    [class*="large screen only"]:not(.computer),
+    [class*="widescreen only"]:not(.computer),
+    [class*="or lower hidden"]:not(.tablet):not(.mobile) {
+      display: none !important;
+    }
+  }
+  
+  /* Large Monitor */
+  @media only screen and (min-width: 1200px) and (max-width: 1919px) {
+    [class*="mobile only"]:not([class*="large screen"]),
+    [class*="tablet only"]:not([class*="large screen"]),
+    [class*="computer only"]:not([class*="large screen"]),
+    [class*="large screen hidden"],
+    [class*="widescreen only"]:not([class*="large screen"]),
+    [class*="or lower hidden"]:not(.computer):not(.tablet):not(.mobile) {
+      display: none !important;
+    }
+  }
+  
+  /* Widescreen Monitor */
+  @media only screen and (min-width: 1920px) {
+    [class*="mobile only"]:not([class*="widescreen"]),
+    [class*="tablet only"]:not([class*="widescreen"]),
+    [class*="computer only"]:not([class*="widescreen"]),
+    [class*="large screen only"]:not([class*="widescreen"]),
+    [class*="widescreen hidden"],
+    [class*="widescreen or lower hidden"] {
+      display: none !important;
+    }
+  }
