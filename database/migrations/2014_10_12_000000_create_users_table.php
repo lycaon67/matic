@@ -67,6 +67,10 @@ class CreateUsersTable extends Migration
             $table->foreign('deviceid')->references('id')->on('device');
             $table->foreign('roomid')->references('id')->on('room');
         });
+
+        Schema::table('room', function (Blueprint $table){
+            $table->foreign('houseid')->reference('id')->on('house');
+        });
     }
 
     /**
