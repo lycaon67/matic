@@ -122,6 +122,121 @@
     <!-- Pusher -->
     <div class="pusher">
         <div class="main-content">
+            <div class="ui grid stackable padded">
+                <div class="four wide computer eight wide tablet sixteen wide mobile column">
+                    <div class="ui fluid card">
+                        <div class="content">
+                            <div class="ui icon header">
+                                <a href="#"><i class="icon massive power red"></i></a>
+                                <div class="meta">
+                                    Relay 1
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="four wide computer eight wide tablet sixteen wide mobile column">
+                    <div class="ui fluid card">
+                        <div class="content">
+                            <div class="ui icon header">
+                                <i class="icon massive power red"></i>
+                                <div class="meta">
+                                    Relay 1
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            {{-- <div class="ui grid stackable padded">
+                <div class="column">
+                    <table class="ui celled striped table">
+                        <thead>
+                            <tr>
+                                <th colspan="3">
+                                Git Repository
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="collapsing">
+                                <i class="folder icon"></i> node_modules
+                                </td>
+                                <td>Initial commit</td>
+                                <td class="right aligned collapsing">10 hours ago</td>
+                            </tr>
+                            <tr>
+                                <td><i class="folder icon"></i> test</td>
+                                <td>Initial commit</td>
+                                <td class="right aligned">10 hours ago</td>
+                            </tr>
+                            <tr>
+                                <td><i class="folder icon"></i> build</td>
+                                <td>Initial commit</td>
+                                <td class="right aligned">10 hours ago</td>
+                            </tr>
+                            <tr>
+                                <td><i class="file outline icon"></i> package.json</td>
+                                <td>Initial commit</td>
+                                <td class="right aligned">10 hours ago</td>
+                            </tr>
+                            <tr>
+                                <td><i class="file outline icon"></i> Gruntfile.js</td>
+                                <td>Initial commit</td>
+                                <td class="right aligned">10 hours ago</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="ui grid stackable padded">
+                <div class="four wide computer eight wide tablet sixteen wide mobile  center aligned column">
+                    <div class="ui teal statistic">
+                        <div class="value">
+                        5,550
+                        </div>
+                        <div class="label">
+                        Downloads
+                        </div>
+                    </div>
+                </div>
+                <div class="four wide computer eight wide tablet sixteen wide mobile  center aligned column">
+                    <div class="ui purple statistic">
+                        <div class="value">
+                        50+
+                        </div>
+                        <div class="label">
+                        Developers
+                        </div>
+                    </div>
+                </div>
+                <div class="four wide computer eight wide tablet sixteen wide mobile  center aligned column">
+                    <div class="ui green statistic">
+                        <div class="value">
+                        800+
+                        </div>
+                        <div class="label">
+                        Commits
+                        </div>
+                    </div>
+                </div>
+                <div class="four wide computer eight wide tablet sixteen wide mobile  center aligned column">
+                    <div class="ui purple statistic">
+                        <div class="value">
+                        1000+
+                        </div>
+                        <div class="label">
+                        Cups of Coffee
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+        </div>
+    </div>
+    {{-- <div class="pusher">
+        <div class="main-content">
                 <div class="ui grid">
                     <div class="two column computer only row">
                         <div class="ten wide column">ten wide column computer only</div>
@@ -171,7 +286,7 @@
                     </div>
                 </div> --}}
         </div>
-    </div>
+    </div> --}}
     
 <!-- Modal House -->
     
