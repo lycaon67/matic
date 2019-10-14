@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
         });
 
         Schema::create('house', function (Blueprint $table){
-            $table->increments('id');
+            $table->increments('id')->unique();
             $table->string('name');
             $table->timestamps(); 
         });
