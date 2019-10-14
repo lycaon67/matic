@@ -8,6 +8,7 @@ body{
     max-height: calc(100%)!important;
 }
 
+
 i#add-house {
     float: right;
     font-size: 20px;
@@ -268,6 +269,9 @@ i#add-house {
   .ps a:hover > img{
     filter: none;
   }
+  .ps a:active >img{
+    filter:none;
+  } 
 
   .section{
     width:600px;
