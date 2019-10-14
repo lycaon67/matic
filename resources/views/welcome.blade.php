@@ -47,7 +47,7 @@
                     <span class="date">Joined in 2019</span>
                     </div>
                     <div class="description">
-                    Jhun Wolf or "Jawo" graduated from the University of San Carlos.
+                    Jhun Wulf or "Jawo" graduated from the University of San Carlos.
                     </div>
                 </div>
                 <div class="extra content">
