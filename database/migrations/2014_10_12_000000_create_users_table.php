@@ -70,7 +70,7 @@ class CreateUsersTable extends Migration
         });
 
         Schema::table('room', function (Blueprint $table){
-            $table->foreign('houseid')->reference('id')->on('house');
+            $table->foreign('houseid')->references('id')->on('house');
         });
     }
 
