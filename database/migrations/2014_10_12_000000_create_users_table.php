@@ -54,6 +54,7 @@ class CreateUsersTable extends Migration
             $table->integer('id')->unsigned()->autoIncrement();
             $table->integer('houseid')->unsigned();
             $table->string('name');
+            $table->index('houseid');
             $table->timestamps();
         });
 
@@ -69,7 +70,6 @@ class CreateUsersTable extends Migration
         });
 
         Schema::table('room', function (Blueprint $table){
-            $table->index('houseid');
             $table->foreign('houseid')->reference('id')->on('house');
         });
     }
