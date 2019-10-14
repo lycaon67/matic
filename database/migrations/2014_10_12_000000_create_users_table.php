@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
         });
 
         Schema::create('house', function (Blueprint $table){
-            $table->increments('id')->unique();
+            $table->increments('id');
             $table->string('name');
             $table->timestamps(); 
         });
@@ -52,7 +52,7 @@ class CreateUsersTable extends Migration
 
         Schema::create('room', function (Blueprint $table){
             $table->integer('id')->unsigned()->autoIncrement();
-            $table->integer('houseid')->unsigned();
+            $table->integer('houseid')->unsigned()->unique();
             $table->string('name');
             $table->timestamps();
         });
