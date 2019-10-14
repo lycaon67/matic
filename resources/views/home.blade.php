@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
 
 </head>
-<body>
+<body class="layout pushable">
     <!-- Sidebar -->
     <div class="ui sidebar inverted vertical menu sidebar-menu" id="sidebar">
         <div class="item ">
@@ -36,16 +36,44 @@
                 My House
                 <i id="add-house" class="icon plus square outline create-house"></i> 
             </div>
-            <div class="menu">
-                <div class="ui accordion item inverted">
+            <div class="menu side-menu">
+{{--                 
+            @if(count($houses) > 0)
+                @foreach($houses as $house)
+                <li class="item" id="{{ $house->name }}{{ $house->id }}">
+                    <a href="#{{ $house->name }}{{ $house->id }}" class="btn">{{ $house->name }}<i class="setting icon house-setting" ></i></a>
+                    <div class="smenu">
+                        @if(count($rooms) > 0)
+                            @foreach($rooms as $room)   
+                                @if($house->id == $room->houseid)   
 
+                                <a href="">
+                                    {{ $room->name }}
+                                </a>
+                                @endif 
+                            @endforeach
+
+                        @else{
+                            <p class="transition hidden">
+                                no room
+                            </p>
+                        }
+                        @endif
+                    </div>
+                </li>
+                @endforeach
+            @endif
+                <li class="item">
+                    <a href="#" class="btn">logout</a>
+                </li> --}}
+                <div class="ui accordion item inverted">
                     @if(count($houses) > 0)
                         @foreach($houses as $house)
                             <div class="title">
-                                {{ $house->name }}<i class="setting icon house-setting" ></i>
+                                <a>{{ $house->name }}<i class="setting icon house-setting" ></i></a>
                             </div>
-                            <div class="content house-room">
-                                @if(count($rooms) > 0)
+                            <div class="content">
+                                @if(count($rooms) >= 1)
                                     @foreach($rooms as $room)   
                                         @if($house->id == $room->houseid)   
                                         
@@ -64,6 +92,9 @@
                             </div>
                         @endforeach
                     @endif
+                            <div class="title">
+                                <a href="#">Logout</a>    
+                            </div>
                 </div>
             </div>  
         </div>
@@ -80,78 +111,98 @@
         </div>
         <div class="right menu">
             <div class="item">
-                    <a href="{{ route('logout') }}">logout</a> 
-                <form  action="{{ route('logout') }}" method="POST" style="display: none;">
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">logout</a> 
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf      
                 </form>
             </div>
         </div>
     </nav>
     <!-- End Topbar -->
-    
+    <!-- Pusher -->
+    <div class="pusher">
+        <div class="main-content">
+                <div class="ui grid">
+                    <div class="two column computer only row">
+                        <div class="ten wide column">ten wide column computer only</div>
+                        <div class="six wide column">six wide column computer only</div>
+                    </div>
+                    <div class="sixteen wide mobile only column">sixteen wide column mobile only</div>
+                    <div class="three column computer only row">
+                        <div class="column">computer only row</div>
+                        <div class="column">computer only row</div>
+                        <div class="column">computer only row</div>
+                    </div>
+                    <div class="two column mobile only row">
+                        <div class="column">mobile only column</div>
+                        <div class="column">mobile only column</div>
+                    </div>
+                    <div class="two column row">
+                        <div class="column">column</div>
+                        <div class="column">column</div>
+                    </div>
+                </div>
 
+                {{-- <div class="ui three column divided grid">
+                    <div class="row">
+                        <div class="column">
+                            <img src="img/off.png" alt="off">
+                        </div>
+                        <div class="column">
+                            <img src="img/off.png" alt="off">
+                        </div>
+                        <div class="column">
+                            <img src="img/off.png" alt="off">
+                        </div>
+                        <div class="column">
+                            <img src="img/off.png" alt="off">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="column">
+                            <p></p>
+                        </div>
+                        <div class="column">
+                            <p></p>
+                        </div>
+                        <div class="column">
+                            <p></p>
+                        </div>
+                    </div>
+                </div> --}}
+        </div>
+    </div>
+    
 <!-- Modal House -->
     
-    <div class="ui tiny modal " id="house-modal">
+<div class="ui tiny modal " id="house-modal">
         <i class="close icon"></i>
         <div class="header middle aligned center aligned">
             Build a house
         </div>
         <div class="content">
-            <form class="ui form" method="POST" action="{{ route('login.custom') }}">
+            <form class="ui form" method="POST" action="{{ route('house.create') }}">
                 @csrf
                 <div class="field">
                     <div class="ui left icon input">
-                        <i class="user icon"></i>
-                        <input type="text" placeholder="E-mail address" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                        <i class="home icon"></i>
+                        <input type="text" placeholder="House Name" id="house-name" name="name" value="{{ old('house-name') }}" required autocomplete="housename" autofocus>
                     </div>
                 </div>  
                 <div class="field">
                     <div class="ui left icon input">
                         <i class="lock icon"></i>
-                        <input id="password" type="password" placeholder="Password" class="input100 form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                        <input id="devicekey" type="text" placeholder="Device key" class="input100 form-control @error('devicekey') is-invalid @enderror" name="devicekey" required autocomplete="devicekey">
                     </div>
                 </div>
-                <div class="field">
-                    <div class="ui checkbox">
-                        <input type="checkbox" tabindex="0" class="hidden">
-                        <label for="">Remember me!</label>
-                    </div>
-                </div>
-                <button class="ui fluid positive right labeled icon button float right">{{ __('Login') }}<i class="checkmark icon"></i></button>
+                <button class="ui fluid positive right labeled icon button float right">BUILD<i class="checkmark icon"></i></button>
             </form>
-            <div class="ui message float right  ">
-                New to us? <a href="#">Sign Up</a>
-            </div>
         </div>
     </div>
 
 <!-- end modal -->
+    
 
-    <!-- Pusher -->
-    <div class="pusher">
-        <div class="main-content">    
-            <div class="ui fluid card">
-                <div class="ui grid stackable padded">
-                    
-                    <div class="three wide computer column">
-                        <div class="ui fluid card">
-                            <div class="content">
-                                <div class="relay on">
-                                    <i class="ui icon power"></i>                            
-                                    <h3>Relay 1</h3> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    
-                </div>
-
-            </div>
-        
-        </div>
-    </div>
 
     <script src="js/jquery.3.2.1.min.js"></script>
     <script src="Semantic-UI-CSS-master/semantic.min.js"></script>

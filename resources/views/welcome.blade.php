@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -62,19 +61,26 @@
 
     <div class="login-box">
         <i class="close icon hide-btn"></i>
-        <form action="{{ route('login.custom') }}" method="POST" class="login-form">
+        <form action="{{ route('login.custom') }}" method="POST" class="login-form" id="mylogin">
             @csrf
             <h1><img src="img/icons/Matik-word-logo-white.png" width="300px" alt=""></h1>    
             <input type="text" class="txtb" placeholder="E-mail address" name="email">
             <input type="password" class="txtb" placeholder="Password" name="password">
-            <input type="submit" class="login-btn" value="Login">
+            {{-- <input type="submit" class="login-btn" value="Login"> --}}
+            <a href="javascript: loginForm()" id="login-btn" class="ui login-btn button">Login</a>
+
         </form>
     </div>
 
-  <script src="js/jquery.3.2.1.min.js"></script>
-  <script src="Semantic-UI-CSS-master/semantic.min.js"></script>
-  <script src="js/script.js"></script>
-
+    <script src="js/jquery.3.2.1.min.js"></script>
+    <script src="Semantic-UI-CSS-master/semantic.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        function loginForm(){
+            $("#mylogin").submit();
+            var form = $('#login-btn');
+            $(form).addClass('loading disabled');
+        }
+    </script>
 </body>
-
 </html>
