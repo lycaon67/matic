@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-        <form action="{{ route::('device.create') }}" method="POST">
+        <form action="{{ route('device.create') }}" method="POST">
                 <input type="text" name="devicekey" placeholder="Device Key" id="device-key" disabled>
                 <select name="type" id="">
                     <option value="C">Control</option>
@@ -16,6 +16,39 @@
                 <input type="submit" value="Create Device">
             </form>
         </div>
+    </div>
+    <div class="row">
+      <table class="col-md-8 offset-2">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Device Key</th>
+            <th>Device Password</th>
+            <th>House Name</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>xxxx-xxxx-xxxx-xxxx</td>
+            <td>xxxx-xxxx-xxxx-xxxx</td>
+            <td>House Name</td>
+            <td>Active</td>
+          </tr>
+          @if(count($devices))
+            @foreach($devices as $device)
+              <tr>
+                <td>{{ $device->id }}</td>
+                <td>{{ $device->key }}</td>
+                <td>{{ $device->keypass }}</td>
+                <td>{{ $device->houseid }}</td>
+                <td>{{ $device->status }}</td>
+              </tr>
+            @endforeach
+          @endif
+        </tbody>
+      </table>
     </div>
 </div>
 
