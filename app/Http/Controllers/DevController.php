@@ -37,8 +37,18 @@ class DevController extends Controller
 
     public function index()
     {
+// <<<<<<< HEAD
         $devices = device::all();
         $house = house::all();
-        return view('/dashboard', compact($devices,));
+        return view('/dashboard')->with('devices',$devices);
+// =======
+// <<<<<<< HEAD
+        // return view('/dashboard');
+// =======
+//         $device = device::all();
+
+//         return view('/dashboard')->with('devices', $device);
+// >>>>>>> 088beae0a9cdf46b98da6c746c482c6a5cd1acb1
+// >>>>>>> d5849b5c0251aea8e2ecbf1ede37e91d439c21da
     }
 }
