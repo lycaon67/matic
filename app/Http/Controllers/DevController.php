@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\User;
+use App\device;
 use Illuminate\Http\Request;
 
 class DevController extends Controller
@@ -21,6 +22,18 @@ class DevController extends Controller
     {
         $this->middleware('auth');
     }
+
+    public function create()
+    {
+        $device = new device;
+        $device->key = $request->input('devicekey');
+        $device->keypass = $request->input('keypass');
+        $device->key = $request->input('devicekey');
+        $device->save();
+
+        return Redirect::back();
+    }
+
     public function index()
     {
         return view('/dashboard');

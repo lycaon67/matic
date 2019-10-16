@@ -18,14 +18,15 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => bcrypt('admin'),
             'type' => '1',
-        ]);
-
-        DB::table('users')->insert([
+        ],
+        [
             'firstname' => 'nikko',
             'lastname' => 'men',
             'email' => 'nikko@gmail.com',
             'password' => bcrypt('nikko'),
             'type' => '0',
-        ]);
+        ]    
+        );
+
     }
 }

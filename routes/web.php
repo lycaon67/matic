@@ -52,6 +52,10 @@ Route::get('room/show/{id}',[
     'as' => 'show.room'
 ]);
 
+Route::post('device/create',[
+    'uses' => 'DevController@create',
+    'as' => 'device.create'
+]);
 
 
 
