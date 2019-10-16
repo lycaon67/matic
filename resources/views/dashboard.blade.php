@@ -5,15 +5,17 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
         <form action="{{ route('device.create') }}" method="POST">
-                <input type="text" name="devicekey" placeholder="Device Key" id="device-key" disabled>
+          @csrf
+                <input type="hidden" name="devicekey" placeholder="Device Key" id="device-key">
+                <input type="hidden" name="keypass" placeholder="Key Password" id="keypass" >
                 <select name="type" id="">
-                    <option value="C">Control</option>
-                    <option value="M">Monitor</option>
-                    <option value="S">Security</option>
+                    <option value="Control">Control</option>
+                    <option value="Monitor">Monitor</option>
+                    <option value="Security">Security</option>
                 </select>
                 <input type="number" name="channel">
-                <input type="button" value="Generate" onclick="uuidv4()">
-                <input type="submit" value="Create Device">
+                <input type="button" value="Generate" >
+                <input type="submit" value="Create Device" onclick="uuidv4()">
             </form>
         </div>
     </div>
@@ -24,24 +26,20 @@
             <th>#</th>
             <th>Device Key</th>
             <th>Device Password</th>
+            <th>Type</th>
             <th>House Name</th>
             <th>Status</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>xxxx-xxxx-xxxx-xxxx</td>
-            <td>xxxx-xxxx-xxxx-xxxx</td>
-            <td>House Name</td>
-            <td>Active</td>
-          </tr>
+
           @if(count($devices))
             @foreach($devices as $device)
               <tr>
                 <td>{{ $device->id }}</td>
                 <td>{{ $device->key }}</td>
                 <td>{{ $device->keypass }}</td>
+                <td>{{ $device->type }}</td>
                 <td>{{ $device->houseid }}</td>
                 <td>{{ $device->status }}</td>
               </tr>
@@ -54,11 +52,16 @@
 
 <script>
 function uuidv4() {
-  var key = 'xxxx-xxxx-xxxx-xxxx'.replace(/[xy]/g, function(c) {
+  var key = 'xxxxxxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 36 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(36);
+  });
+  var keypass = 'xxxxxxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
     var r = Math.random() * 36 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
     return v.toString(36);
   });
   
+  $('#keypass').val(keypass);
   $('#device-key').val(key);
 }
 
