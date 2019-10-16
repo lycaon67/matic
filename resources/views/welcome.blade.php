@@ -32,30 +32,94 @@
         <h1>Our Team</h1>
         <span class="border"></span>
         <div class="ps">
-            <a href="#team1"><img src="img/team/jawu.jpg" alt=""></a>
-            <a href="#team2"><img src="img/team/kisil.jpg" alt=""></a>
-            <a href="#team3"><img src="img/team/nikko.jpg" alt=""></a>
-            <a href="#team4"><img src="img/team/yayam.jpg" alt=""></a>
+             <a href="#team1"><img src="img/team/jawu.jpg" alt=""></a>
+             <a href="#team2"><img src="img/team/kisil.jpg" alt=""></a>
+             <a href="#team3"><img src="img/team/nikko.jpg" alt=""></a>
+             <a href="#team4"><img src="img/team/yayam.jpg" alt=""></a>
         </div>
         <div class="section" id="team1">
             <span class="name">Juan Gray</span>
             <span class="border"></span>
-            <p>I am Juan Gray</p>
-        </div>
+            <div class="ui centered card">
+                <div class="content">
+                    <a class="header">Jhun Wolf</a>
+                    <div class="meta">
+                    <span class="date">Joined in 2019</span>
+                    </div>
+                    <div class="description">
+                    Jhun Wulf or "Jawo" graduated from the University of San Carlos.
+                    </div>
+                </div>
+                <div class="extra content">
+                    <a>
+                    <i class="user icon"></i>
+                    Back-end developer
+                    </a>
+                </div> 
+            </div>
+         </div>
         <div class="section" id="team2">
             <span class="name">Quezel Karm</span>
             <span class="border"></span>
-            <p>I am Quezel Karm</p>
+            <div class="ui centered card">
+                <div class="content">
+                    <a class="header">Quezel Karm</a>
+                    <div class="meta">
+                    <span class="date">Joined in 2019</span>
+                    </div>
+                    <div class="description">
+                    Quezel or "Kisil" graduated from the University of San Carlos.
+                    </div>
+                </div>
+                <div class="extra content">
+                    <a>
+                    <i class="user icon"></i>
+                    Front-end developer
+                    </a>
+                </div> 
+            </div>
         </div>
         <div class="section" id="team3">
             <span class="name">Nikko</span>
             <span class="border"></span>
-            <p>I am Nikko</p>
+            <div class="ui centered card">
+                <div class="content">
+                    <a class="header">Nikko</a>
+                    <div class="meta">
+                    <span class="date">Joined in 2019</span>
+                    </div>
+                    <div class="description">
+                   Dom or "Nikko" graduated from the University of San Carlos.
+                    </div>
+                </div>
+                <div class="extra content">
+                    <a>
+                    <i class="user icon"></i>
+                    Back-end developer
+                    </a>
+                </div> 
+            </div>
         </div>
         <div class="section" id="team4">
             <span class="name">William Ponce</span>
             <span class="border"></span>
-            <p>I am William Ponce</p>
+            <div class="ui centered card">
+                <div class="content">
+                    <a class="header">William</a>
+                    <div class="meta">
+                    <span class="date">Joined in 2019</span>
+                    </div>
+                    <div class="description">
+                    William a.k.a. "yayam" graduated from the University of San Carlos.
+                    </div>
+                </div>
+                <div class="extra content">
+                    <a>
+                    <i class="user icon"></i>
+                    Front-end developer
+                    </a>
+                </div> 
+            </div>
         </div>
     </div>
 
