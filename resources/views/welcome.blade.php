@@ -56,7 +56,7 @@
                     Back-end developer
                     </a>
                 </div> 
-            </div>
+                </div>
          </div>
         <div class="section" id="team2">
             <span class="name">Quezel Karm</span>
@@ -121,6 +121,11 @@
                 </div> 
             </div>
         </div>
+        <div class="ui centered inverted segment">
+                    <h4 class="ui horizontal inverted divider">
+                        M A T I K
+                    </h4>
+                </div>
     </div>
 
     <div class="login-box">
