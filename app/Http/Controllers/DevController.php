@@ -23,6 +23,6 @@ class DevController extends Controller
     }
     public function index()
     {
-        return view('/device');
+        return view('/dashboard');
     }
 }
