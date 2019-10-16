@@ -37,40 +37,11 @@
                 <i id="add-house" class="icon plus square outline create-house"></i> 
             </div>
             <div class="menu side-menu">
-{{--                 
-            @if(count($houses) > 0)
-                @foreach($houses as $house)
-                <li class="item" id="{{ $house->name }}{{ $house->id }}">
-                    <a href="#{{ $house->name }}{{ $house->id }}" class="btn">{{ $house->name }}<i class="setting icon house-setting" ></i></a>
-                    <div class="smenu">
-                        @if(count($rooms) > 0)
-                            @foreach($rooms as $room)   
-                                @if($house->id == $room->houseid)   
-
-                                <a href="">
-                                    {{ $room->name }}
-                                </a>
-                                @endif 
-                            @endforeach
-
-                        @else{
-                            <p class="transition hidden">
-                                no room
-                            </p>
-                        }
-                        @endif
-                    </div>
-                </li>
-                @endforeach
-            @endif
-                <li class="item">
-                    <a href="#" class="btn">logout</a>
-                </li> --}}
                 <div class="ui accordion item inverted">
                     @if(count($houses) > 0)
                         @foreach($houses as $house)
                             <div class="title">
-                                <a>{{ $house->name }}<i class="setting icon house-setting" ></i></a>
+                                <a>{{ $house->name }}<i class="setting icon house-setting" onclick="roomfetch({{$house->id}});"></i></a>
                             </div>
                             <div class="content">
                                 @if(count($rooms) >= 1)
@@ -122,171 +93,169 @@
     <!-- Pusher -->
     <div class="pusher">
         <div class="main-content">
+            {{-- Content header --}}
             <div class="ui grid stackable padded">
-                <div class="four wide computer eight wide tablet sixteen wide mobile column">
-                    <div class="ui fluid card">
-                        <div class="content">
-                            <div class="ui icon header">
-                                <a href="#"><i class="icon massive power red"></i></a>
-                                <div class="meta">
-                                    Relay 1
-                                </div>
-                            </div>
-                        </div>
+                <div class="content">
+                    <div class="ui header">
+                        House name / Room name / Controls
                     </div>
                 </div>
-                <div class="four wide computer eight wide tablet sixteen wide mobile column">
-                    <div class="ui fluid card">
-                        <div class="content">
-                            <div class="ui icon header">
-                                <i class="icon massive power red"></i>
-                                <div class="meta">
-                                    Relay 1
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
             </div>
-            {{-- <div class="ui grid stackable padded">
+            {{-- End of Content header --}}
+            
+            
+            {{-- Control content --}}
+
+           
+            <!-- {{-- End of Control Content --}}
+            {{-- room management --}}
+            <div class="ui grid stackable padded">
+                <div class="title">
+                    <div class="ui header">
+                        Room Management
+                        <a href="#"><i class="icon plus create-room"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="ui grid stackable padded" id="roomlist">
+                <div class="three wide computer eight wide tablet sixteen wide mobile column">
+                    <div class="ui fluid card">
+                        <div class="content">
+                            <div class="ui icon header">
+                                <a href="#"><i class="icon massive home blue"></i></a>
+                                <div class="meta">
+                                    Jawu Room
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- end of room management --}}
+            {{-- Device managment --}}
+            <div class="ui grid stackable padded">
+                <div class="title">
+                    <div class="ui header">
+                        Device Management
+                        <a href="#"><i class="icon plus add-device"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            {{-- end of device management    --}}
+            <div class="ui grid stackable padded">
                 <div class="column">
                     <table class="ui celled striped table">
                         <thead>
                             <tr>
-                                <th colspan="3">
-                                Git Repository
+                                <th colspan="4">
+                                Device List
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                #
+                                </th>
+                                <th>
+                                    Device Key
+                                </th>
+                                <th>
+                                    Type
+                                </th>
+                                <th>
+                                    Status
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="collapsing">
-                                <i class="folder icon"></i> node_modules
-                                </td>
-                                <td>Initial commit</td>
-                                <td class="right aligned collapsing">10 hours ago</td>
+                                <td class="collapsing">1</td>
+                                <td>S5345DJF345WUEN345asdasdqw34534534s</td>
+                                <td>Control</td>
+                                <td class="right aligned collapsing">Active</td>
                             </tr>
-                            <tr>
-                                <td><i class="folder icon"></i> test</td>
-                                <td>Initial commit</td>
-                                <td class="right aligned">10 hours ago</td>
-                            </tr>
-                            <tr>
-                                <td><i class="folder icon"></i> build</td>
-                                <td>Initial commit</td>
-                                <td class="right aligned">10 hours ago</td>
-                            </tr>
-                            <tr>
-                                <td><i class="file outline icon"></i> package.json</td>
-                                <td>Initial commit</td>
-                                <td class="right aligned">10 hours ago</td>
-                            </tr>
-                            <tr>
-                                <td><i class="file outline icon"></i> Gruntfile.js</td>
-                                <td>Initial commit</td>
-                                <td class="right aligned">10 hours ago</td>
-                            </tr>
+                           
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </div> -->
+
             <div class="ui grid stackable padded">
                 <div class="four wide computer eight wide tablet sixteen wide mobile  center aligned column">
                     <div class="ui teal statistic">
-                        <div class="value">
-                        5,550
-                        </div>
-                        <div class="label">
-                        Downloads
-                        </div>
+                    <div class="ui fitted massive toggle checkbox">
+                        <input type="checkbox">
+                        <label></label>
+                    </div>
+                    <h4> RELAY SWITCH 1 </h4>
                     </div>
                 </div>
                 <div class="four wide computer eight wide tablet sixteen wide mobile  center aligned column">
                     <div class="ui purple statistic">
-                        <div class="value">
-                        50+
-                        </div>
-                        <div class="label">
-                        Developers
-                        </div>
+                    <div class="ui fitted massive toggle checkbox">
+                        <input type="checkbox">
+                        <label></label>
+                    </div>
+                    <h4> RELAY SWITCH 2 </h4>
                     </div>
                 </div>
                 <div class="four wide computer eight wide tablet sixteen wide mobile  center aligned column">
                     <div class="ui green statistic">
-                        <div class="value">
-                        800+
-                        </div>
-                        <div class="label">
-                        Commits
-                        </div>
+                    <div class="ui fitted massive toggle checkbox">
+                        <input type="checkbox">
+                        <label></label>
+                    </div>
+                    <h4> RELAY SWITCH 3 </h4>
                     </div>
                 </div>
                 <div class="four wide computer eight wide tablet sixteen wide mobile  center aligned column">
                     <div class="ui purple statistic">
-                        <div class="value">
-                        1000+
-                        </div>
-                        <div class="label">
-                        Cups of Coffee
-                        </div>
+                    <div class="ui fitted massive toggle checkbox">
+                        <input type="checkbox">
+                        <label></label>
+                    </div>
+                    <h4> RELAY SWITCH 4 </h4>
                     </div>
                 </div>
-            </div> --}}
+                <div class="four wide computer eight wide tablet sixteen wide mobile  center aligned column">
+                    <div class="ui green statistic">
+                    <div class="ui fitted massive toggle checkbox">
+                        <input type="checkbox">
+                        <label></label>
+                    </div>
+                    <h4> RELAY SWITCH 5 </h4>
+                    </div>
+                </div>
+                <div class="four wide computer eight wide tablet sixteen wide mobile  center aligned column">
+                    <div class="ui green statistic">
+                    <div class="ui fitted massive toggle checkbox">
+                        <input type="checkbox">
+                        <label></label>
+                    </div>
+                    <h4> RELAY SWITCH 6 </h4>
+                    </div>
+                </div>
+                <div class="four wide computer eight wide tablet sixteen wide mobile  center aligned column">
+                    <div class="ui green statistic">
+                    <div class="ui fitted massive toggle checkbox">
+                        <input type="checkbox">
+                        <label></label>
+                    </div>
+                    <h4> RELAY SWITCH 7 </h4>
+                    </div>
+                </div>
+                <div class="four wide computer eight wide tablet sixteen wide mobile  center aligned column">
+                    <div class="ui green statistic">
+                    <div class="ui fitted massive toggle checkbox">
+                        <input type="checkbox">
+                        <label></label>
+                    </div>
+                    <h4> RELAY SWITCH 8 </h4>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    {{-- <div class="pusher">
-        <div class="main-content">
-                <div class="ui grid">
-                    <div class="two column computer only row">
-                        <div class="ten wide column">ten wide column computer only</div>
-                        <div class="six wide column">six wide column computer only</div>
-                    </div>
-                    <div class="sixteen wide mobile only column">sixteen wide column mobile only</div>
-                    <div class="three column computer only row">
-                        <div class="column">computer only row</div>
-                        <div class="column">computer only row</div>
-                        <div class="column">computer only row</div>
-                    </div>
-                    <div class="two column mobile only row">
-                        <div class="column">mobile only column</div>
-                        <div class="column">mobile only column</div>
-                    </div>
-                    <div class="two column row">
-                        <div class="column">column</div>
-                        <div class="column">column</div>
-                    </div>
-                </div>
-
-                {{-- <div class="ui three column divided grid">
-                    <div class="row">
-                        <div class="column">
-                            <img src="img/off.png" alt="off">
-                        </div>
-                        <div class="column">
-                            <img src="img/off.png" alt="off">
-                        </div>
-                        <div class="column">
-                            <img src="img/off.png" alt="off">
-                        </div>
-                        <div class="column">
-                            <img src="img/off.png" alt="off">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="column">
-                            <p></p>
-                        </div>
-                        <div class="column">
-                            <p></p>
-                        </div>
-                        <div class="column">
-                            <p></p>
-                        </div>
-                    </div>
-                </div> --}}
-        </div>
-    </div> --}}
     
 <!-- Modal House -->
     
@@ -317,12 +286,58 @@
 
 <!-- end modal -->
     
+<!-- Modal room -->
+    
+<div class="ui tiny modal " id="room-modal">
+    <i class="close icon"></i>
+    <div class="header middle aligned center aligned">
+        Add Room
+    </div>
+    <div class="content">
+        <form class="ui form" method="POST" action="{{ route('room.create') }}">
+            @csrf
+            <div class="field">
+                <div class="ui left icon input">
+                    <i class="home icon"></i>
+                    <input type="hidden" id="house-id" name="houseid" value="2">
+                    <input type="text" placeholder="Room Name" id="room-name" name="roomname" value="{{ old('room-name') }}" required autocomplete="roomname" autofocus>
+                </div>
+            </div>  
+            <button class="ui fluid positive right labeled icon button float right">Add<i class="checkmark icon"></i></button>
+        </form>
+    </div>
+</div>
+
+<!-- end modal -->
+
+<!-- Modal room -->
+    
+<div class="ui tiny modal " id="device-modal">
+    <i class="close icon"></i>
+    <div class="header middle aligned center aligned">
+        Add Room
+    </div>
+    <div class="content">
+        <form class="ui form" method="POST" action="{{ route('room.create') }}">
+            @csrf
+            <div class="field">
+                <div class="ui left icon input">
+                    <i class="key icon"></i>
+                    <input type="hidden" id="house-id" name="houseid" value="2">
+                    <input type="text" placeholder="Device Key" id="device-key" name="devicekey" value="{{ old('devicekey') }}" required autocomplete="devicekey" autofocus>
+                </div>
+            </div>  
+            <button class="ui fluid positive right labeled icon button float right">Add<i class="checkmark icon"></i></button>
+        </form>
+    </div>
+</div>
+
+<!-- end modal -->
 
 
     <script src="js/jquery.3.2.1.min.js"></script>
     <script src="Semantic-UI-CSS-master/semantic.min.js"></script>
     <script src="js/script.js"></script>
-
 
 
 
