@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="Semantic-UI-CSS-master/semantic.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
 
 </head>
 <body class="layout pushable">
@@ -63,9 +64,7 @@
                             </div>
                         @endforeach
                     @endif
-                            <div class="title">
-                                <a href="#">Logout</a>    
-                            </div>
+                            
                 </div>
             </div>  
         </div>
@@ -82,7 +81,12 @@
         </div>
         <div class="right menu">
             <div class="item">
-                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">logout</a> 
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <div class="ui animated button" tabindex="0">
+                            <div class="visible content"><i class="sign in alternate icon"></i></div>
+                                <div class="hidden content">
+                                    Sign Out</a>
+                            </div>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf      
                 </form>
@@ -97,7 +101,11 @@
             <div class="ui grid stackable padded">
                 <div class="content">
                     <div class="ui header">
-                        House name / Room name / Controls
+                     <h2 class="ui icon header">
+                        <i class="sitemap icon"></i>
+                         <div class="content">
+                             Control Room
+                    </h2>
                     </div>
                 </div>
             </div>
@@ -179,83 +187,46 @@
                     </table>
                 </div>
             </div> -->
-
             <div class="ui grid stackable padded">
-                <div class="four wide computer eight wide tablet sixteen wide mobile  center aligned column">
-                    <div class="ui teal statistic">
-                    <div class="ui fitted massive toggle checkbox">
+            <div class="four wide computer eight wide tablet sixteen wide mobile  center aligned column">
+                    <label class="switch">
                         <input type="checkbox">
-                        <label></label>
-                    </div>
+                        <span class="slider round"></span>
+                            </label>
                     <h4> RELAY SWITCH 1 </h4>
-                    </div>
                 </div>
                 <div class="four wide computer eight wide tablet sixteen wide mobile  center aligned column">
-                    <div class="ui purple statistic">
-                    <div class="ui fitted massive toggle checkbox">
+                    <label class="switch">
                         <input type="checkbox">
-                        <label></label>
-                    </div>
+                        <span class="slider round"></span>
+                            </label>
                     <h4> RELAY SWITCH 2 </h4>
-                    </div>
                 </div>
+               
                 <div class="four wide computer eight wide tablet sixteen wide mobile  center aligned column">
-                    <div class="ui green statistic">
-                    <div class="ui fitted massive toggle checkbox">
+                    <label class="switch">
                         <input type="checkbox">
-                        <label></label>
-                    </div>
+                        <span class="slider round"></span>
+                            </label>
                     <h4> RELAY SWITCH 3 </h4>
-                    </div>
                 </div>
                 <div class="four wide computer eight wide tablet sixteen wide mobile  center aligned column">
-                    <div class="ui purple statistic">
-                    <div class="ui fitted massive toggle checkbox">
+                    <label class="switch">
                         <input type="checkbox">
-                        <label></label>
-                    </div>
+                        <span class="slider round"></span>
+                            </label>
                     <h4> RELAY SWITCH 4 </h4>
-                    </div>
                 </div>
                 <div class="four wide computer eight wide tablet sixteen wide mobile  center aligned column">
-                    <div class="ui green statistic">
-                    <div class="ui fitted massive toggle checkbox">
+                    <label class="switch">
                         <input type="checkbox">
-                        <label></label>
-                    </div>
+                        <span class="slider round"></span>
+                            </label>
                     <h4> RELAY SWITCH 5 </h4>
-                    </div>
-                </div>
-                <div class="four wide computer eight wide tablet sixteen wide mobile  center aligned column">
-                    <div class="ui green statistic">
-                    <div class="ui fitted massive toggle checkbox">
-                        <input type="checkbox">
-                        <label></label>
-                    </div>
-                    <h4> RELAY SWITCH 6 </h4>
-                    </div>
-                </div>
-                <div class="four wide computer eight wide tablet sixteen wide mobile  center aligned column">
-                    <div class="ui green statistic">
-                    <div class="ui fitted massive toggle checkbox">
-                        <input type="checkbox">
-                        <label></label>
-                    </div>
-                    <h4> RELAY SWITCH 7 </h4>
-                    </div>
-                </div>
-                <div class="four wide computer eight wide tablet sixteen wide mobile  center aligned column">
-                    <div class="ui green statistic">
-                    <div class="ui fitted massive toggle checkbox">
-                        <input type="checkbox">
-                        <label></label>
-                    </div>
-                    <h4> RELAY SWITCH 8 </h4>
-                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    
     
 <!-- Modal House -->
     
@@ -288,7 +259,7 @@
     
 <!-- Modal room -->
     
-<div class="ui tiny modal " id="room-modal">
+<div class="ui basic modal " id="room-modal">
     <i class="close icon"></i>
     <div class="header middle aligned center aligned">
         Add Room

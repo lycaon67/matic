@@ -5,6 +5,62 @@ body{
 
 /* Toggle Switch */
 
+.switch {
+  position: relative;
+  display: block;
+  width: 90px;
+  height: 55px;
+  margin: auto;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left:0; right:0; bottom:0;
+  background :white;
+  transition: .5s;
+  border: 2px solid rgb(51, 51, 51);
+  box-shadow: 1px 1px 1px rgba(0,0,0, 0.1);
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  bottom: 14px;
+  top: 8px;
+  left: 0px;
+  background-color: rgb(70, 70, 70);
+  transition: .5s;
+}
+.switch input { display:none; }
+
+input:checked + .slider{
+  background-color: rgb(102, 223, 108);
+}
+
+input:checked + .slider:before{
+  transform: translateX(47px) rotateZ(45deg);
+  background :rgb(255, 255, 255);
+
+}
+.slider.round {
+  border-radius:35px;
+}
+
+.slider.round:before{
+  width: 43%;
+  height: 43%;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  transform: rotateZ(-45deg);
+
+}
+
+
+
+
+
+
+
 .ui.vertical.menu.sidebar-menu{
     overflow-y: visible!important;
     max-height: calc(100%)!important;

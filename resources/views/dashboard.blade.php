@@ -50,7 +50,12 @@
       </div>
       <div class="right menu">
           <div class="item">
-                  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">logout</a> 
+                  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                      <div class="ui animated button" tabindex="0">
+                            <div class="visible content"><i class="sign in alternate icon"></i></div>
+                                <div class="hidden content">
+                                    Sign Out</a>
+                            </div> 
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                   @csrf      
               </form>
